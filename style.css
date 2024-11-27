@@ -96,5 +96,149 @@ width: 100%;
     }
     
 }
+.text {
+    position: absolute;
+    bottom: 200px; /* Raise the text higher */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px; /* Slightly larger font */
+    font-family: 'Courier New', Courier, monospace; /* Apply Courier font */
+    font-weight: bold; /* Make the font bold */
+    color: #03e9f4; /* Matching the cube color */
+    text-shadow: 0 0 5px rgba(3, 233, 244, 1),
+                 0 0 10px rgba(3, 233, 244, 1),
+                 0 0 20px rgba(3, 233, 244, 1);
+    letter-spacing: 2px;
+    display: flex;
+    gap: 5px;
+}
 
+.text span {
+    opacity: 0;
+    animation: typing 1.5s ease-in-out forwards, glow 2s infinite;
+    animation-delay: calc(var(--i) * 0.1s);
+}
 
+/* Typing effect */
+@keyframes typing {
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.8); /* Small and out of view */
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(0) scale(1.1); /* Slight pop effect */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1); /* Stay in place */
+    }
+}
+
+/* Glowing effect for coolness */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px rgba(3, 233, 244, 1),
+                     0 0 15px rgba(3, 233, 244, 1),
+                     0 0 30px rgba(3, 233, 244, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(3, 233, 244, 1),
+                     0 0 30px rgba(3, 233, 244, 1),
+                     0 0 50px rgba(3, 233, 244, 0.7);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(3, 233, 244, 1),
+                     0 0 15px rgba(3, 233, 244, 1),
+                     0 0 30px rgba(3, 233, 244, 0.5);
+    }
+}
+
+.text {
+    position: absolute;
+    bottom: 200px; /* Raise the text higher */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px; /* Slightly larger font */
+    font-family: 'Montserrat', sans-serif; /* Apply Courier font */
+    font-weight: bold; /* Make the font bold */
+    color: #03e9f4; /* Matching the cube color */
+    text-shadow: 0 0 5px rgba(3, 233, 244, 1),
+                 0 0 10px rgba(3, 233, 244, 1),
+                 0 0 20px rgba(3, 233, 244, 1);
+    letter-spacing: 2px;
+    display: flex;
+    gap: 5px;
+}
+
+.text span {
+    opacity: 0;
+    animation: typing 1.5s ease-in-out forwards, glow 2s infinite;
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+/* Typing effect */
+@keyframes typing {
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.8); /* Small and out of view */
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(0) scale(1.1); /* Slight pop effect */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1); /* Stay in place */
+    }
+}
+
+/* Glowing effect for coolness */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px rgba(3, 233, 244, 1),
+                     0 0 15px rgba(3, 233, 244, 1),
+                     0 0 30px rgba(3, 233, 244, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(3, 233, 244, 1),
+                     0 0 30px rgba(3, 233, 244, 1),
+                     0 0 50px rgba(3, 233, 244, 0.7);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(3, 233, 244, 1),
+                     0 0 15px rgba(3, 233, 244, 1),
+                     0 0 30px rgba(3, 233, 244, 0.5);
+    }
+}
+
+/* Box animation below the text (bolder, smaller bar) */
+.loading-bar-container {
+    position: absolute;
+    bottom: 130px; /* Adjust the space between text and loading bar */
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content; /* Dynamically adjusts width based on text length */
+    height: 6px; /* Smaller height */
+    background: rgba(3, 233, 244, 0.2); /* Light background */
+    border-radius: 3px; /* Rounded edges */
+    box-shadow: 0 0 8px rgba(3, 233, 244, 0.7); /* Subtle shadow */
+    overflow: hidden;
+}
+
+.loading-bar {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(3, 233, 244, 1) 0%, rgba(3, 233, 244, 0.7) 50%, rgba(3, 233, 244, 0.3) 100%);
+    animation: loading 5s ease-in-out forwards;
+}
+
+/* Animation for the loading bar */
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
